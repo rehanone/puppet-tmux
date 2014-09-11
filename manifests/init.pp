@@ -1,53 +1,64 @@
 # == Class: tmux
 #
-# Full description of class tmux here.
+# This is a puppet class to manage installation and configuration of tmux.
 #
 # === Parameters
 #
-# Document parameters here.
+# [ensure]
+#   Whether to ensure the tmux package is installed or absent.
 #
-# [*sample_parameter*]
-#   Explanation of what this parameter affects and what it defaults to.
-#   e.g. "Specify one or more upstream ntp servers as an array."
+# [auto_update]
+#   Whether the tmux package should upgrade itself based on the system
+#   package manager.
 #
-# === Variables
+# [conf_file]
+#   The absolute path to the tmux configuration file.
 #
-# Here you should define a list of variables that this module would require.
+# [prefix_key]
+#   The prefix key used by tmux to access tmux commands and control.
 #
-# [*sample_variable*]
-#   Explanation of how this variable affects the funtion of this class and if
-#   it has a default. e.g. "The parameter enc_ntp_servers must be set by the
-#   External Node Classifier as a comma separated list of hostnames." (Note,
-#   global variables should be avoided in favor of class parameters as
-#   of Puppet 2.6.)
+# [vi_mode_keys]
+#   Whether to use vi style keys during history buffer scrolling etc.
+#
+# [pretty_statusbar]
+#   Whether to use a pretty statusbar in your tmux session.
 #
 # === Examples
 #
-#  class { tmux:
-#    servers => [ 'pool.ntp.org', 'ntp.local.company.com' ],
-#  }
+#   See README.md
 #
 # === Authors
 #
-# Author Name <author@domain.com>
+# Zan Loy <zan.loy@gmail.com>
 #
 # === Copyright
 #
-# Copyright 2014 Your name here, unless otherwise noted.
+# Copyright 2014 Zan Loy
 #
-class tmux ( $auto_update = true, $prefix_key = 'default', $vi_mode_keys = true, $pretty_statusbar = false ) {
+class tmux (
+  $ensure           = $tmux::params::ensure,
+  $auto_update      = $tmux::params::auto_update,
+  $conf_file        = $tmux::params::conf_file,
+  $prefix_key       = $tmux::params::prefix_key,
+  $vi_mode_keys     = $tmux::params::vi_mode_keys,
+  $pretty_statusbar = $tmux::params::pretty_statusbar,
+) inherits tmux::params {
 
-  if $auto_update == true {
-    $version = 'latest'
+  if $ensure == true {
+    if $auto_update == true {
+      $version = 'latest'
+    } else {
+      $version = 'present'
+    }
   } else {
-    $version = 'present'
+    $version = 'absent'
   }
 
   package { 'tmux':
     ensure => $version;
   }
 
-  file { '/etc/tmux.conf':
+  file { $conf_file:
     ensure => file,
     content => template("${module_name}/tmux.conf.erb");
   }

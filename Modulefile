@@ -1,11 +1,6 @@
 name    'zanloy-tmux'
 version '0.1.0'
-source 'UNKNOWN'
 author 'zanloy'
 license 'Apache License, Version 2.0'
-summary 'UNKNOWN'
-description 'UNKNOWN'
-project_page 'UNKNOWN'
-
-## Add dependencies, if any:
-# dependency 'username/name', '>= 1.2.0'
+summary 'A puppet class to handle tmux installation and configuration.'
+project_page 'https://github.com/zanloy/puppet-tmux'
