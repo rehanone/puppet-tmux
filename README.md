@@ -40,21 +40,17 @@ This module aims to enable easy installation and configuration of tmux through c
 ## Sample Usage
 Install tmux and use the provided configuration defaults
 ```
-node default {
-  class { 'tmux': }
-}
+class { '::tmux': }
 ```
 Install tmux to replace GNU/screen
 ```
-class ::tmux {
+class { '::tmux':
   prefix_key => 'screen'
 }
 ```
 Uninstall tmux
 ```
-node default {
-  class { 'tmux':
-    ensure => absent,
-  }
+class { '::tmux':
+  ensure => absent,
 }
 ```
