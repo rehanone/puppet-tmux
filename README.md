@@ -37,6 +37,11 @@ This module aims to enable easy installation and configuration of tmux through c
 * Default: true
 * Description: Adds a pretty statusbar to your session.
 
+###* clock
+* Accepted valued: true or false
+* Default: true
+* Description: Adds a clock to the status bar
+
 ## Sample Usage
 Install tmux and use the provided configuration defaults
 ```

@@ -54,5 +54,9 @@ set -w -g window-status-current-format '#[fg=red](#[fg=default]#I:#W#[fg=red])'
 set -w -g window-status-current-fg default
 # Right
 set -g status-right-length 150
+<% if @clock -%>
 set -g status-right '#[fg=green]] [ #[fg=default]#(cut -d " " -f 1-3 /proc/loadavg) #[fg=green]] [ #[fg=default]#(date +"%Y-%m-%d %H:%M") #[fg=green]]'
+<% else -%>
+set -g status-right '#[fg=green]] [ #[fg=default]#(cut -d " " -f 1-3 /proc/loadavg) #[fg=green]]'
+<% end -%>
 <% end -%>

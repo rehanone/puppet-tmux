@@ -5,4 +5,5 @@ class tmux::params {
   $prefix_key       = 'default'
   $vi_mode_keys     = true
   $pretty_statusbar = true
+  $clock            = true
 }

@@ -23,6 +23,10 @@
 # [pretty_statusbar]
 #   Whether to use a pretty statusbar in your tmux session.
 #
+# [clock]
+#   Whether to include a clock in the status bar. (Set to false to prevent
+#   terminal from showing updates every minute when clock updates)
+#
 # === Examples
 #
 #   See README.md
@@ -42,6 +46,7 @@ class tmux (
   $prefix_key       = $tmux::params::prefix_key,
   $vi_mode_keys     = $tmux::params::vi_mode_keys,
   $pretty_statusbar = $tmux::params::pretty_statusbar,
+  $clock            = $tmux::params::clock,
 ) inherits tmux::params {
 
   if $ensure == true {
