@@ -13,9 +13,9 @@ group :development, :test do
   gem 'guard'
   gem 'guard-rake'
   gem 'guard-rspec'
-  gem 'rb-inotify', require: false
-  gem 'rb-fsevent', require: false
-  gem 'rb-fchange', require: false
-  gem 'growl', require: false
-  gem 'libnotify', require: false
+  gem 'rb-inotify', :require => false
+  gem 'rb-fsevent', :require => false
+  gem 'rb-fchange', :require =>false
+  gem 'growl',      :require => false
+  gem 'libnotify',  :require => false
 end
