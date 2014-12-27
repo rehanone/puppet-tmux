@@ -62,4 +62,5 @@ class { '::tmux':
   * Description: Adds a clock to the status bar
 
 ## Build Information
-* [![Build Status](https://travis-ci.org/zanloy/puppet-tmux.svg?branch=master)](https://travis-ci.org/zanloy/puppet-tmux)
+
+[![Build Status](https://travis-ci.org/zanloy/puppet-tmux.svg?branch=master)](https://travis-ci.org/zanloy/puppet-tmux)
