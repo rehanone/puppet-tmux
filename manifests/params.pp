@@ -1,3 +1,4 @@
+# Manifest for default values for tmux
 class tmux::params {
 
   # OS Specific Values
