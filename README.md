@@ -1,4 +1,4 @@
-# puppet-tmux
+# puppet-tmux [![Build Status](https://travis-ci.org/zanloy/puppet-tmux.svg?branch=master)](https://travis-ci.org/zanloy/puppet-tmux)
 
 Manage tmux via puppet.
 
@@ -60,7 +60,3 @@ class { '::tmux':
   * Accepted valued: true or false
   * Default: true
   * Description: Adds a clock to the status bar
-
-## Build Information
-
-[![Build Status](https://travis-ci.org/zanloy/puppet-tmux.svg?branch=master)](https://travis-ci.org/zanloy/puppet-tmux)
