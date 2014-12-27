@@ -98,7 +98,7 @@ DEPENDENCIES
   guard-rake
   guard-rspec
   libnotify
-  puppet (>= 2.7)
+  puppet
   puppet-blacksmith
   puppet-lint
   puppetlabs_spec_helper
