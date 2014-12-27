@@ -1,13 +1,8 @@
 language: ruby
-bundler_args: --without development
 rvm:
-  - 1.8.7
   - 1.9.3
   - 2.0.0
   - 2.1.0
-before_install:
-  - gem update --system 2.1.11
-  - gem --version
 script:
   - "rake lint"
   - "rake spec"
@@ -42,4 +37,4 @@ matrix:
     - rvm: 2.1.0
       env: PUPPET_VERSION="~> 3.4.0"
 notifications:
-  email: zan.loy@gmail.com
+  email: 'zan.loy@gmail.com'
