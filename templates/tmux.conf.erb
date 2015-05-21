@@ -6,6 +6,12 @@
     @prefix_key = 'C-a'
   end
 -%>
+
+<% if @default_shell -%>
+    # set shell
+    set -g default-shell <%= @default_shell -%>
+<% end -%>
+
 # use utf8
 set -g utf8
 set-window-option -g utf8 on

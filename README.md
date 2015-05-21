@@ -62,3 +62,8 @@ class { '::tmux':
   * Accepted valued: true or false
   * Default: true
   * Description: Adds a clock to the status bar
+
+* default_shell
+  * Accepted values: string or default
+  * Default: undefined
+  * Description: Optionally specify a default shell.
