@@ -23,13 +23,15 @@ describe 'tmux' do
         it { should contain_file(conf_file).with_content(/^setw -g mode-keys vi$/) }
         it { should contain_file(conf_file).with_content(/^# setup status bar$/) }
         it { should contain_file(conf_file).with_content(/^set -g status-right .*#\(date.*$/) }
+        it { should contain_file(conf_file).without_content(/set -g default-shell/) }
       end
       context 'installs config file with custom values' do
-        let(:params) { {prefix_key: 'screen', vi_mode_keys: false, pretty_statusbar: false, clock: false} }
+        let(:params) { {prefix_key: 'screen', vi_mode_keys: false, pretty_statusbar: false, clock: false, default_shell: 'zsh'} }
         it { should contain_file(conf_file).with_content(/^set-option -g prefix .*$/) }
         it { should contain_file(conf_file).without_content(/^setw -g mode-keys vi$/) }
         it { should contain_file(conf_file).without_content(/^# setup status bar$/) }
         it { should contain_file(conf_file).without_content(/^set -g status-right .*#\(date.*$/) }
+        it { should contain_file(conf_file).with_content(/set -g default-shell zsh/) }
       end
     end #context on osfamily
   end #osfamilies.each

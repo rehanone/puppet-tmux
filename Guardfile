@@ -1,4 +1,3 @@
-#ignore %r{^spec/fixtures/$}
 directories %w{manifests spec}
 
 #guard 'rake', task: 'rspec' do
