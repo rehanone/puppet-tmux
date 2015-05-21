@@ -17,6 +17,7 @@ class tmux (
   $vi_mode_keys     = $tmux::params::vi_mode_keys,
   $pretty_statusbar = $tmux::params::pretty_statusbar,
   $clock            = $tmux::params::clock,
+  $default_shell    = $tmux::params::default_shell,
 ) inherits tmux::params {
 
   if $ensure == true {
