@@ -1,6 +1,6 @@
 {
   "name": "zanloy-tmux",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "zanloy",
   "summary": "A puppet class to handle tmux installation and configuration.",
   "description": "tmux is a better implementation of a terminal multiplexer than GNU/screen. It can basically be dropped in as a replacement if you change the prefix key.",

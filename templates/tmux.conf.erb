@@ -5,6 +5,13 @@
   when 'screen'
     @prefix_key = 'C-a'
   end
+
+  case @prefix2_key
+  when 'default'
+    @prefix2_key = 'C-b'
+  when 'screen'
+    @prefix2_key = 'C-a'
+  end
 -%>
 
 <% if @default_shell -%>
@@ -23,6 +30,10 @@ bind <%= @prefix_key %> send-prefix
 
 # free up original prefix-key
 unbind C-b
+<% end -%>
+
+<% if @prefix2_key -%>
+set-option -g prefix2 <%= @prefix2_key %>
 <% end -%>
 
 # assign a key to go to last window

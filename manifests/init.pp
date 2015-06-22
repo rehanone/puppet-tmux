@@ -14,6 +14,7 @@ class tmux (
   $auto_update      = $tmux::params::auto_update,
   $conf_file        = $tmux::params::conf_file,
   $prefix_key       = $tmux::params::prefix_key,
+  $prefix2_key      = undef,
   $vi_mode_keys     = $tmux::params::vi_mode_keys,
   $pretty_statusbar = $tmux::params::pretty_statusbar,
   $clock            = $tmux::params::clock,
