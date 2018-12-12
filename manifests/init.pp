@@ -21,7 +21,7 @@ class tmux (
   $default_shell    = $tmux::params::default_shell,
 ) inherits tmux::params {
 
-  if $ensure == true {
+  if $ensure == true or $ensure == "present" {
     if $auto_update == true {
       $version = 'latest'
     } else {
