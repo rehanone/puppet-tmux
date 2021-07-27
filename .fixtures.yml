@@ -1,3 +1,8 @@
 fixtures:
+  forge_modules:
+    stdlib:
+      repo: "puppetlabs/stdlib"
+    vcsrepo:
+      repo: "puppetlabs/vcsrepo"
   symlinks:
-    'tmux': "#{source_dir}"
+    tmux: "#{source_dir}"

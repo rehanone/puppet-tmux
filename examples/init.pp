@@ -9,4 +9,8 @@
 # Learn more about module testing here:
 # http://docs.puppetlabs.com/guides/tests_smoke.html
 #
+
 include tmux
+
+# for a single user
+tmux::profile { 'vagrant': ensure => present }

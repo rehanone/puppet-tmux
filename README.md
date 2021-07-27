@@ -1,6 +1,6 @@
 # puppet-tmux
 
-[![Build Status](https://travis-ci.org/zanloy/puppet-tmux.svg?branch=master)](https://travis-ci.org/zanloy/puppet-tmux)
+[![Build Status](https://travis-ci.com/rehanone/puppet-tmux.svg?branch=master)](https://travis-ci.com/rehanone/puppet-tmux)
 
 Manage tmux via puppet.
 
@@ -11,59 +11,56 @@ and reattach them to a different terminal. And do a lot more.
 ## Sample Usage
 Install tmux and use the provided configuration defaults
 ```
-class { '::tmux': }
+class { 'tmux': }
 ```
-Install tmux to replace GNU/screen
+Install tmux with different package management options
 ```
 class { '::tmux':
-  prefix_key => 'screen'
+  package_manage => true,
+  package_name   => 'tmux',
+  package_ensure => 'latest',
 }
 ```
 Uninstall tmux
 ```
 class { '::tmux':
-  ensure => absent,
+  package_ensure => 'absent',
 }
 ```
 
 ## Class parameters
-* ensure 
-  * Accepted values: present or absent 
+* package_ensure 
+  * Accepted values: present, absent, latest 
   * Default: present
   * Description: Whether or not tmux will be installed
 
-* auto_update
-  * Accepted values: true or false
-  * Default: false
-  * Description: Whether or not the tmux package should be automatically kept
-    up-to-date using the distribution's packaging system
-
-* conf_file
-  * Accepted values: string
-  * Default: /etc/tmux.conf
-  * Description: Path to tmux's main configuration file.
-
-* prefix_key
-  * Accepted values: string or 'default' (CTRL+b) or 'screen' (CTRL+a)
-  * Default: C-b
-  * Description: Sets the prefix key you use to access tmux during a session.
-
-* vi_mode_keys
+* package_manage
   * Accepted values: true or false
   * Default: true
-  * Description: Use vi mode keys for scrollbar, etc.
+  * Description: Whether or not this module will be allowed to manage tmux package using system package manager.
 
-* pretty_statusbar
-  * Accepted values: true or false
-  * Default: true
-  * Description: Adds a pretty statusbar to your session.
+* package_name
+  * Accepted values: non-empty string
+  * Default: tmux
+  * Description: Lets you override the default package name on a given system.
 
-* clock
-  * Accepted valued: true or false
-  * Default: true
-  * Description: Adds a clock to the status bar
+All of this data can be provided through `Hiera`.
 
-* default_shell
-  * Accepted values: string or default
-  * Default: undefined
-  * Description: Optionally specify a default shell.
+**YAML**
+```yaml
+tmux::package_manage: true
+tmux::package_ensure: present
+tmux::package_name: 'tmux'
+tmux::download_home: '/opt/tmux'
+tmux::profiles:
+  root:
+    manage: true
+    ensure: present
+  user1:
+    manage: true
+    ensure: present
+  user2:
+    manage: true
+    ensure: absent
+```
+
