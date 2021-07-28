@@ -1,18 +1,137 @@
 {
-  "name": "zanloy-tmux",
+  "name": "rehan-tmux",
   "version": "1.0.2",
-  "author": "zanloy",
-  "summary": "A puppet class to handle tmux installation and configuration.",
-  "description": "tmux is a better implementation of a terminal multiplexer than GNU/screen. It can basically be dropped in as a replacement if you change the prefix key.",
+  "author": "Rehan Mahmood",
+  "summary": "Install, manage and configure tmux and set per user profiles for tmux",
   "license": "Apache-2.0",
-  "source": "https://github.com/zanloy/puppet-tmux",
-  "project_page": "https://github.com/zanloy/puppet-tmux",
-  "issues_url": "https://github.com/zanloy/puppet-tmux/issues",
-  "dependencies": [],
+  "source": "https://github.com/rehanone/puppet-tmux.git",
+  "project_page": "https://github.com/rehanone/puppet-tmux",
+  "issues_url": "https://github.com/rehanone/puppet-tmux/issues",
+  "dependencies": [
+    {
+      "name": "puppetlabs-stdlib",
+      "version_requirement": ">= 5.0.0 < 8.0.0"
+    },
+    {
+      "name": "puppetlabs-vcsrepo",
+      "version_requirement": ">= 3.0.0 < 6.0.0"
+    }
+  ],
   "operatingsystem_support": [
-    {"operatingsystem": "CentOS"},
-    {"operatingsystem": "Debian"},
-    {"operatingsystem": "RedHat"},
-    {"operatingsystem": "Ubuntu"}
-  ]
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [
+        "6",
+        "7",
+        "8"
+      ]
+    },
+    {
+      "operatingsystem": "Rocky",
+      "operatingsystemrelease": [
+        "8"
+      ]
+    },
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [
+        "6",
+        "7",
+        "8"
+      ]
+    },
+    {
+      "operatingsystem": "OracleLinux",
+      "operatingsystemrelease": [
+        "6",
+        "7",
+        "8"
+      ]
+    },
+    {
+      "operatingsystem": "Scientific",
+      "operatingsystemrelease": [
+        "6",
+        "7",
+        "8"
+      ]
+    },
+    {
+      "operatingsystem": "Fedora",
+      "operatingsystemrelease": [
+        "32",
+        "33",
+        "34"
+      ]
+    },
+    {
+      "operatingsystem": "SLES",
+      "operatingsystemrelease": [
+        "12",
+        "15"
+      ]
+    },
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "8",
+        "9",
+        "10",
+        "11"
+      ]
+    },
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [
+        "14.04",
+        "16.04",
+        "18.04",
+        "20.04"
+      ]
+    },
+    {
+      "operatingsystem": "FreeBSD",
+      "operatingsystemrelease": [
+        "11",
+        "12",
+        "13"
+      ]
+    },
+    {
+      "operatingsystem": "DragonFly",
+      "operatingsystemrelease": [
+        "4.0",
+        "4.2",
+        "4.4",
+        "4.6",
+        "4.8",
+        "5.0",
+        "5.2",
+        "5.4",
+        "5.6",
+        "5.8"
+      ]
+    },
+    {
+      "operatingsystem": "ArchLinux"
+    }
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 5.5.10 < 8.0.0"
+    },
+    {
+      "name": "puppetlabs-vcsrepo",
+      "version_requirement": ">= 2.0.0 < 5.0.0"
+    }
+  ],
+  "tags": [
+    "tmux",
+    "screen",
+    "terminal windows"
+  ],
+  "pdk-version": "2.1.1",
+  "template-url": "pdk-default#2.1.1",
+  "template-ref": "tags/2.1.1-0-g03daa92"
 }

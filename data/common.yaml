@@ -1,0 +1,5 @@
+---
+tmux::package_manage: true
+tmux::package_name: 'tmux'
+tmux::package_ensure: 'present'
+tmux::download_home: '/opt/tmux'
