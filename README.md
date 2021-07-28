@@ -2,6 +2,10 @@
 
 [![Build Status](https://travis-ci.com/rehanone/puppet-tmux.svg?branch=master)](https://travis-ci.com/rehanone/puppet-tmux)
 
+This module is a clone of [zanloy/tmux](https://forge.puppet.com/modules/zanloy/tmux).
+It removes the global /etc/tmux.conf based config file in favor of using [ohmytmux](https://github.com/gpakosz/.tmux)
+on per user profile level.
+
 Manage tmux via puppet.
 
 tmux is a terminal multiplexer. It lets you switch easily between several
