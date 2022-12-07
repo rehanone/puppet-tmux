@@ -50,11 +50,7 @@
       "operatingsystem": "AlmaLinux"
     },
     {
-      "operatingsystem": "SLES",
-      "operatingsystemrelease": [
-        "12",
-        "15"
-      ]
+      "operatingsystem": "SLES"
     },
     {
       "operatingsystem": "Debian",
@@ -74,12 +70,7 @@
       ]
     },
     {
-      "operatingsystem": "FreeBSD",
-      "operatingsystemrelease": [
-        "11",
-        "12",
-        "13"
-      ]
+      "operatingsystem": "FreeBSD"
     },
     {
       "operatingsystem": "DragonFly"
@@ -91,7 +82,7 @@
   "requirements": [
     {
       "name": "puppet",
-      "version_requirement": ">= 5.5.10 < 8.0.0"
+      "version_requirement": ">= 6.0.0 < 8.0.0"
     },
     {
       "name": "puppetlabs-vcsrepo",
