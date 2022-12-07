@@ -13,4 +13,7 @@
 include tmux
 
 # for a single user
-tmux::profile { 'vagrant': ensure => present }
+user { 'vagrant': }
+tmux::profile { 'vagrant':
+  ensure => present,
+}

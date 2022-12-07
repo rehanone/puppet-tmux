@@ -49,7 +49,7 @@ describe 'tmux::profile' do
         context 'using incorrect profile_type' do
           let(:params) { { profile_type: 'unknown' } }
 
-          it { expect { is_expected.to compile }.to raise_error }
+          it { expect { is_expected.to compile }.to raise_error Exception }
         end
       end
     end

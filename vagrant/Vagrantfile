@@ -3,13 +3,13 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
-  config.vm.box = "bento/ubuntu-22.04"
-  config.vm.box_url = "https://app.vagrantup.com/bento/boxes/ubuntu-22.04"
+  config.vm.box = "bento/ubuntu-20.04"
+  config.vm.box_url = "https://app.vagrantup.com/bento/boxes/ubuntu-20.04"
 
-  config.vm.synced_folder ".", "/etc/puppetlabs/code/environments/production/modules/tmux"
+  config.vm.synced_folder "../", "/code"
 
   config.vm.provision :shell, inline: <<-EOF
-    readonly source_file="puppet7-release-jammy.deb"
+    readonly source_file="puppet7-release-focal.deb"
     readonly source_url="https://apt.puppetlabs.com/"
 
     if [ -f ${source_file} ]; then
@@ -23,17 +23,21 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
       apt-get update
       apt-get install -y puppet-agent
+      apt-get install -y pdk
+
+      ln -sf /opt/puppetlabs/bin/puppet /usr/local/bin/puppet
+      ln -sf /opt/puppetlabs/bin/facter /usr/local/bin/facter
+      ln -sf /opt/puppetlabs/pdk/bin/pdk /usr/local/bin/pdk
+
+      apt-get install -y fish
     fi
 
     puppet module install puppetlabs/stdlib
     puppet module install puppetlabs/vcsrepo
-  EOF
 
-  config.vm.provision :puppet do |puppet|
-    puppet.manifests_path = "examples"
-    puppet.manifest_file  = "init.pp"
-#	puppet.module_path    = ["."]
-#    puppet.options        = "../"
-#    puppet.options        = "--verbose --debug"
-  end
+
+    sudo useradd -u 2100 rehan || echo "User rehan already exists."
+    sudo usermod -s /usr/bin/fish vagrant
+    sudo usermod -s /usr/bin/fish rehan
+  EOF
 end
