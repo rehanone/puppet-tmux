@@ -1,6 +1,6 @@
 {
   "name": "rehan-tmux",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "author": "Rehan Mahmood",
   "summary": "Install, manage and configure tmux and set per user profiles for tmux",
   "license": "Apache-2.0",

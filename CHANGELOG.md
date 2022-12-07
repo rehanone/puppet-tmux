@@ -1,3 +1,9 @@
+## 2.0.2 (December 7, 2022)
+
+**Improvements:**
+
+- Updated minimum `puppet` version to `6.0.0`.
+
 ## 2.0.1 (December 7, 2022)
 
 **Improvements:**
