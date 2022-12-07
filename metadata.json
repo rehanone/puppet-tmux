@@ -27,12 +27,6 @@
       ]
     },
     {
-      "operatingsystem": "Rocky",
-      "operatingsystemrelease": [
-        "8"
-      ]
-    },
-    {
       "operatingsystem": "CentOS",
       "operatingsystemrelease": [
         "6",
@@ -41,28 +35,19 @@
       ]
     },
     {
-      "operatingsystem": "OracleLinux",
-      "operatingsystemrelease": [
-        "6",
-        "7",
-        "8"
-      ]
+      "operatingsystem": "OracleLinux"
     },
     {
-      "operatingsystem": "Scientific",
-      "operatingsystemrelease": [
-        "6",
-        "7",
-        "8"
-      ]
+      "operatingsystem": "Scientific"
     },
     {
-      "operatingsystem": "Fedora",
-      "operatingsystemrelease": [
-        "32",
-        "33",
-        "34"
-      ]
+      "operatingsystem": "Fedora"
+    },
+    {
+      "operatingsystem": "Rocky"
+    },
+    {
+      "operatingsystem": "AlmaLinux"
     },
     {
       "operatingsystem": "SLES",
@@ -74,7 +59,6 @@
     {
       "operatingsystem": "Debian",
       "operatingsystemrelease": [
-        "8",
         "9",
         "10",
         "11"
@@ -83,10 +67,10 @@
     {
       "operatingsystem": "Ubuntu",
       "operatingsystemrelease": [
-        "14.04",
         "16.04",
         "18.04",
-        "20.04"
+        "20.04",
+        "22.04"
       ]
     },
     {
@@ -98,19 +82,7 @@
       ]
     },
     {
-      "operatingsystem": "DragonFly",
-      "operatingsystemrelease": [
-        "4.0",
-        "4.2",
-        "4.4",
-        "4.6",
-        "4.8",
-        "5.0",
-        "5.2",
-        "5.4",
-        "5.6",
-        "5.8"
-      ]
+      "operatingsystem": "DragonFly"
     },
     {
       "operatingsystem": "ArchLinux"
@@ -131,7 +103,7 @@
     "screen",
     "terminal windows"
   ],
-  "pdk-version": "2.1.1",
-  "template-url": "pdk-default#2.1.1",
-  "template-ref": "tags/2.1.1-0-g03daa92"
+  "pdk-version": "2.5.0",
+  "template-url": "pdk-default#2.5.0",
+  "template-ref": "tags/2.5.0-0-g369d483"
 }

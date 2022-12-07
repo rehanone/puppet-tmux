@@ -9,7 +9,6 @@ define tmux::profile (
     default => "/home/${title}"
   },
 ) {
-
   include tmux
 
   if $manage {

@@ -1,7 +1,6 @@
 # Class: tmux::install
 #
 class tmux::install inherits tmux {
-
   assert_private("Use of private class ${name} by ${caller_module_name}")
 
   if $tmux::package_manage {
